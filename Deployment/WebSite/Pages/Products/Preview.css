@@ -1,0 +1,61 @@
+﻿.review-input {
+    background-color: #d9d9d912;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: rgb(0 0 0 / 0.40) 2px 2px 10px;
+}
+
+.preview-platform {
+    font-size: 15px;
+}
+
+.preview-img {
+    border: 1px solid #00000073;
+    border-radius: 3px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.preview-card {
+    width: 100%;
+    background-color: #282B2E;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}
+
+.preview-price-card {
+    width: 100%;
+    background-color: #282B2E;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}
+
+.preview-price {
+    margin: 0 auto;
+    width: fit-content;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.preview-add-to-wishlist {
+    background-color: #008A7A;
+    border: none;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}
+
+.preview-add-to-cart {
+    background-color: #CA5500;
+    border: none;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}
+
+.font-primary {
+    color: #FF6B00;
+}
+
+.review-date {
+    font-size: 10px;
+    float: right;
+    margin-right: 3px;
+}

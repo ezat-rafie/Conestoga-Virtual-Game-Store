@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Chocolist.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/86b7170c48.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/28.0.0/jssor.slider.min.js"
+        integrity="sha512-hIV4+MQS3ysAwIMfFP0KMFJXp72W2/+gF595ZWxDjEQFh7UHQ4bq2lAwum2kkr2E36lZvax+Y8tuAQez2Lga7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <form runat="server">
+        <style>
+            /* ===== Scrollbar CSS ===== */
+            /* Firefox */
+            * {
+                scrollbar-width: thin;
+                scrollbar-color: #ff6b00 #212121;
+            }
+
+                /* Chrome, Edge, and Safari */
+                *::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                *::-webkit-scrollbar-track {
+                    background: #212121;
+                }
+
+                *::-webkit-scrollbar-thumb {
+                    background-color: #ff6b00;
+                    border-radius: 3px;
+                    border: 1px solid #000000;
+                }
+        </style>
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="container p-0">
+                <a class="navbar-brand" runat="server" href="~/">
+                    <span>
+                        <img style="margin-top: -10px;" src="/images/CVGS-Logo.png" alt="Chocolist" width="30" />
+                        <span>Chocolist</span>
+                    </span>
+                </a>
+
+                <div class="row menu-bar">
+                    <div class="col">
+                        <a runat="server" href="~/" title="Home" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-house-chimney"></i></a>
+                    </div>
+                    <div class="col">
+                        <a runat="server" href="#" id="userProfile" title="Guest" onserverclick="CheckUserLoggedIn" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-user"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnFriendList" visible="false">
+                        <a runat="server" href="~/Pages/User/Friends.aspx" title="Friends" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-users"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnWish" visible="false">
+                        <a runat="server" href="~/Pages/Cart/ViewWishList.aspx" title="Wish List" data-toggle="tooltip" data-placement="bottom" style="display: inline-flex"><i class="fa-solid menu-bar-item fa-heart-circle-plus"></i>
+                            <asp:Label ID="wishCount" runat="server" Text="" /></a>
+                    </div>
+                    <div class="col" runat="server" id="btnCart" visible="false">
+                        <a runat="server" href="~/Pages/Cart/ViewCart.aspx" title="Cart" data-toggle="tooltip" data-placement="bottom" style="display: inline-flex"><i class="fa-solid menu-bar-item fa-cart-shopping"></i>
+                            <asp:Label ID="cartCount" runat="server" Text="" /></a>
+                    </div>
+                    <div class="col" runat="server" id="btnItemList" visible="false">
+                        <a runat="server" href="~/Pages/Products/ItemList.aspx" title="Products" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-screwdriver-wrench"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnOrders" visible="false">
+                        <a runat="server" href="~/Pages/Cart/ViewOrders.aspx" title="Orders" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-dollar-sign"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnReviews" visible="false">
+                        <a runat="server" href="~/Pages/Products/ItemReviews.aspx" title="Reviews" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-star"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnReports" visible="false">
+                        <a runat="server" href="~/Pages/Reports/ViewReports.aspx" title="Reports" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid fa-scroll menu-bar-item"></i></a>
+                    </div>
+                    <div class="col" runat="server" id="btnUserOrder" visible="false">
+                        <a runat="server" href="~/Pages/User/UserViewOrders.aspx" title="Downloads" data-toggle="tooltip" data-placement="bottom"><i class="fa-solid menu-bar-item fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>

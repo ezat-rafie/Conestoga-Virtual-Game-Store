@@ -1,0 +1,50 @@
+﻿.background-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.3;
+    height: 100%;
+    object-fit: cover;
+}
+#login-form, #register-form {
+    width: 30%;
+    background-color: #282B2E;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+    padding: 5% 1%;
+    margin-top: calc(50% - 400px);
+}
+.w-fit {
+    width: fit-content;
+}
+.text-input {
+    background-color: #d9d9d912;
+    border-color: #00000071;
+    color: #fff;
+}
+
+#btnLogin,
+#btnRegister {
+    background-color: #CA5500;
+    border: none;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+    font-size: 20px;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.captcha {
+    display: flex;
+    justify-content: center;
+    width: fit-content !important;
+    background-color: #282b2e !important;
+}
+.captcha img{
+    border-radius: 5px;
+}

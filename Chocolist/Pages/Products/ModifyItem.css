@@ -1,0 +1,43 @@
+﻿.text-input {
+    background-color: #d9d9d912;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: rgb(0 0 0 / 0.40) 2px 2px 10px;
+}
+
+.platforms {
+    background-color: #d9d9d912;
+    border-color: #00000033;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: rgb(0 0 0 / 0.40) 2px 2px 10px;
+}
+
+.form-check-label{
+    opacity:0.8;
+}
+
+.buttons {
+    background-color: #CA5500;
+    border: none;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}
+
+.cover-card {
+    background-color: #d9d9d912;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 0.40) 2px 2px 10px;
+}
+
+.game-images {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 0.40) 5px 5px 10px;
+}

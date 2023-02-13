@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AC7733F-6C06-40BA-9865-55827B897CAB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataService</RootNamespace>
+    <AssemblyName>DataService</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccessLayer\IServices\ICreditCardService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IEventService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IFriendService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IGameService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IAddressService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IInvoiceService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IColourService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IReportService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IReviewService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IUserService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IItemService.cs" />
+    <Compile Include="DataAccessLayer\IServices\IMerchandiseService.cs" />
+    <Compile Include="DataAccessLayer\Services\ColourService.cs" />
+    <Compile Include="DataAccessLayer\Services\MerchandiseService.cs" />
+    <Compile Include="DataAccessLayer\Services\InvoiceService.cs" />
+    <Compile Include="DataAccessLayer\Services\AddressService.cs" />
+    <Compile Include="DataAccessLayer\Services\CreditCardService.cs" />
+    <Compile Include="DataAccessLayer\Services\EventService.cs" />
+    <Compile Include="DataAccessLayer\Services\FriendService.cs" />
+    <Compile Include="DataAccessLayer\Services\GameService.cs" />
+    <Compile Include="DataAccessLayer\Services\ReportService.cs" />
+    <Compile Include="DataAccessLayer\Services\ReviewService.cs" />
+    <Compile Include="DataAccessLayer\Services\UsersService.cs" />
+    <Compile Include="DataAccessLayer\Services\ItemService.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\Colour.cs" />
+    <Compile Include="Models\Merchandise.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\CreditCard.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\EventRegistration.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
